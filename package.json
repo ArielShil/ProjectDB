@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.7.0",
+    "nodemon": "^2.0.19"
+  },
+  "name": "web---project",
+  "version": "1.0.0",
+  "description": "Shopping website whose include Home decor products ",
+  "main": "DBadapter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/Talkachalon/ProjectDB.git"
+  },
+  "author": "Tal Kachalon, Yuval Roth, Ariel Shilian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Talkachalon/ProjectDB/issues"
+  },
+  "homepage": "https://github.com/Talkachalon/ProjectDB#readme"
+}
