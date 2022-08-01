@@ -1,44 +1,16 @@
-const {MongoClient} = require("mongodb");
-const cli = require("nodemon/lib/cli");
-
-const uri = "mongodb://localhost:27017/" //create new mongo client
+const { MongoClient } = require("mongodb");
+// Connection URI
+const uri = "mongodb://localhost:27017/"; // Create a new MongoClient
 const client = new MongoClient(uri);
 
-async function findMongoDoc(color) {
-
-//Connect to the db
-    await client.connect(); 
-    console.log("Connect Success"); 
-
-//Check
-    await client.db("admin").command({ping: 1}); 
-
-//The function
-    const Myresults = await client
-    .db("ProjectDB")
-    .collection("Products")
-    .findOne( {color: `${color}`});
-
-//Close the server
-    await client.close()
-
-    return Myresults;
-}
-
-exports.findcolor = findMongoDoc;
-
-
-
-async function addUser(details){  
+async function loginUser(details){ // Verify login 
     var client = new MongoClient(uri, {useUnifiedTopology: true});
     await client.connect();
+    var query = { uname: "String(details.uname)", psw: "String (details.psw)" };
     var col = client.db("ProjectDB").collection("Users");
-    var result = await col.insertOne(details);
+    var result = await col.findOne(query);
     client.close();
+    console.log(result)
     return result;
   }
-  
-  
-  
-  
-  exports.addUser = addUser;
+  exports.loginUser=loginUser;
