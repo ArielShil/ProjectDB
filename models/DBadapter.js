@@ -1,28 +1,51 @@
+const { request } = require('express');
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+const url = "mongodb://localhost:27017/";
+const client = new MongoClient(url);
 
 
-
-const insertDB = function(err, db) {
+async function loginUser(details){ // Verify login 
+  var client = new MongoClient(url, {useUnifiedTopology: true});
   await client.connect();
-    console.log("Connected successfully to server");
-    // Establish and verify connection
-    await client.db("admin").command({ ping: 1 });
-  if (err) throw err;
-  var dbo = db.db("ProjectDB");
-  var myobj = { name: "green", price: 40 };
-  dbo.collection("Products").insertOne(myobj, function(err, res) {
-    if (err) throw err;
-    console.log("1 document inserted");
-    db.close();
-  });
+  var query = { user: String(details.ID), password: String (details.password) };
+  var col = client.db("DB").collection("Users");
+  var result = await col.findOne(query);
+  client.close();
+  console.log(result)
+  return result;
 }
+exports.loginUser=loginUser;
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+async function loginUser(details){ // Verify login 
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  var query = { uname: "String(details.uname)", psw: "String (details.psw)" };
+  var col = client.db("ProjectDB").collection("Users");
+  var result = await col.findOne(query);
+  client.close();
+  console.log(result)
+  return result;
+}
+exports.loginUser=loginUser;
 
 
 
 
 MongoClient.connect(url,insertDB ); 
-
+*/
 /*
 
 async function saveClient(details){  // save new customers
