@@ -42,11 +42,23 @@ app.get("/login",async(req,res)=>{ // Verify login by id
  console.log(User)
 });
 
-
-
-
-
 app.listen(port, () => {
   console.log(`http://localhost:${port}`)
 })
 
+/* Add New Product */
+
+app.get('/NewProduct', (req, res) => { //save new Product
+  var NewProduct =
+  {
+    name: req.query.product_name,
+    color: req.query.product_color,
+    price: req.query.product_price,
+    img: req.query.filebutton
+  }
+  async function addNew(details) {
+    await mydb.SaveNewProduct(details).then((result) => res.redirect('admin.html'));
+  }
+  addNew(NewProduct);
+ 
+})

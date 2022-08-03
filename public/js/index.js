@@ -80,8 +80,41 @@ function loadkitchen() {
       });
   }
 
+  function loadAddNewUser() {
+    fetch("http://localhost:3000/adminNewUser.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadNewProducts() {
+    fetch("http://localhost:3000/AddnewProducts.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+ function loadalert() {
+  alert("Success")}
+
   function loadadminUsers() {
     fetch("http://localhost:3000/adminUsers.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadOpenOrders() {
+    fetch("http://localhost:3000/adminOpenOrders.html")
       .then(function (response) {
         return response.text();
       })
