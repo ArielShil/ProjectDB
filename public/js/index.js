@@ -70,4 +70,22 @@ function loadkitchen() {
       });
   }
 
-  
+  function loadadminOrders() {
+    fetch("http://localhost:3000/adminOrders.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadadminUsers() {
+    fetch("http://localhost:3000/adminUsers.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
