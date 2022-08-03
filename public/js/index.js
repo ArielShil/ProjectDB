@@ -101,7 +101,7 @@ function loadkitchen() {
   }
 
  function loadalert() {
-  alert("Success")}
+  alert("User Successfuly Added!")}
 
   function loadadminUsers() {
     fetch("http://localhost:3000/adminUsers.html")
@@ -115,6 +115,17 @@ function loadkitchen() {
 
   function loadOpenOrders() {
     fetch("http://localhost:3000/adminOpenOrders.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+
+  function loadEditUsers() {
+    fetch("http://localhost:3000/adminEditUsers.html")
       .then(function (response) {
         return response.text();
       })

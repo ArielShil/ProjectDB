@@ -39,7 +39,7 @@
     <br>
 <    <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action="/addUser" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -70,26 +70,35 @@
 </div>
 
   <div class="form-group"> 
-  <label class="col-md-4 control-label">Department / Office</label>
+  <label class="col-md-4 control-label">User Type</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="department" class="form-control selectpicker">
-      <option value="">Select your Department/Office</option>
-      <option>Department of Engineering</option>
-      <option>Department of Agriculture</option>
-      <option >Accounting Office</option>
-      <option >Tresurer's Office</option>
-      <option >MPDC</option>
-      <option >MCTC</option>
-      <option >MCR</option>
-      <option >Mayor's Office</option>
-      <option >Tourism Office</option>
+    <select name="User Type" class="form-control selectpicker">
+      <option value="">Select your User Type</option>
+      <option>Regular User</option>
+      <option>Manager</option>
     </select>
   </div>
 </div>
 </div>
-  
+ 
+<div class="form-group"> 
+  <label class="col-md-4 control-label">Role</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="Role" class="form-control selectpicker">
+      <option value="">Select your Role</option>
+      <option>Supplier Manager  </option>
+      <option>Product Manager</option>
+      <option>Project Manager</option>
+    </select>
+  </div>
+</div>
+</div>
+
+
 <!-- Text input-->
 
 <div class="form-group">
@@ -126,39 +135,12 @@
   </div>
 </div>
 
-<!-- Text input-->
-       <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-
-<!-- Text input-->
-       
-<div class="form-group">
-  <label class="col-md-4 control-label">Contact No.</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="contact_no" placeholder="(639)" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Select Basic -->
-
-
 
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" onclick="loadalert()" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" class="clickTheButton" onclick="loadalert()" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
   </div>
 </div>
 

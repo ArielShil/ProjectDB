@@ -29,6 +29,19 @@ async function SaveNewProduct(details){  // save new iWatch to mongo
 exports.SaveNewProduct = SaveNewProduct;
 
 
+/* Save new User */ 
+
+async function saveUser(details){  // save new customers
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  var col = client.db("DB").collection("Users");
+  var result = await col.insertOne(details);
+  client.close();
+  return result;
+}
+exports.saveUser = saveUser;
+
+
 
 
 

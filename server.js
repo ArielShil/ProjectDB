@@ -62,3 +62,23 @@ app.get('/NewProduct', (req, res) => { //save new Product
   addNew(NewProduct);
  
 })
+
+
+/* Add USER */ 
+
+
+app.get('/addUser', (req, res) => { // add new user by admin
+  var newUser =
+  {
+    Name: req.query.id,
+    password: req.query.password,
+    Role: req.query.user,
+    name: req.query.name
+    
+  }
+  async function Newsave(details) {
+    await mydb.saveUser(details).then((result) => res.redirect('admin.html'));
+  }
+  Newsave(newUser);
+
+})
