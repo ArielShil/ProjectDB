@@ -1,4 +1,4 @@
-function loadkitchen() {
+  function loadkitchen() {
     fetch("http://localhost:3000/kitchen.html")
       .then(function (response) {
         return response.text();
@@ -8,9 +8,8 @@ function loadkitchen() {
       });
   }
 
-
-  function loadlogin() {
-    fetch("http://localhost:3000/login.html")
+  function loadkitchenserve() {
+    fetch("http://localhost:3000/kitchen-serve.html")
       .then(function (response) {
         return response.text();
       })
@@ -19,10 +18,58 @@ function loadkitchen() {
       });
   }
 
+  function loadkitchendinner() {
+    fetch("http://localhost:3000/kitchen-dinner.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
 
+  function loadkitchenplates() {
+    fetch("http://localhost:3000/kitchen-plates.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+  
+  function loadkitchentextile() {
+    fetch("http://localhost:3000/kitchen-textile.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
 
   function loadbedroom() {
     fetch("http://localhost:3000/bedroom.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadbedroompillow() {
+    fetch("http://localhost:3000/bedroom-pillows.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadbedroomlamp() {
+    fetch("http://localhost:3000/bedroom-lamp.html")
       .then(function (response) {
         return response.text();
       })
@@ -41,8 +88,74 @@ function loadkitchen() {
       });
   }
 
+  function loadlivingroomdecore() {
+    fetch("http://localhost:3000/livingroom-decore.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+  function loadlivingroomchairs() {
+    fetch("http://localhost:3000/livingroom-chairs.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+  function loadlivingroomtables() {
+    fetch("http://localhost:3000/livingroom-tables.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+  function loadlivingroompaints() {
+    fetch("http://localhost:3000/livingroom-paint.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
   function loadkids() {
     fetch("http://localhost:3000/kids.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadkidsnewborn() {
+    fetch("http://localhost:3000/kids-newborn.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadkidstextile() {
+    fetch("http://localhost:3000/kids-textile.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadkidsaccessories() {
+    fetch("http://localhost:3000/kids-accessories.html")
       .then(function (response) {
         return response.text();
       })

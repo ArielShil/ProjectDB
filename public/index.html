@@ -66,7 +66,7 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.html">Cart: <span class="cart-amunt">$0</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">0</span></a>
+                        <a href="#" onclick="loadcart()">Cart: <span class="cart-amunt">$0</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">0</span></a>
                     </div>
                 </div>
             </div>
@@ -91,42 +91,46 @@
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Kitchen</span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#" onclick="loadkitchen()">View All</a></li>                                
-                                <li><a href="#">Serve Wear</a></li>
-                                <li><a href="#">Dinner</a></li>
-                                <li><a href="#">Plates</a></li>
-                                <li><a href="#">Textile</a></li>
+                                <li><a href="#" onclick="loadkitchenserve()">Serve Wear</a></li>
+                                <li><a href="#" onclick="loadkitchendinner()">Dinner</a></li>
+                                <li><a href="#" onclick="loadkitchenplates()">Plates</a></li>
+                                <li><a href="#" onclick="loadkitchentextile()">Textile</a></li>
                             </ul>
                         </li>
                         <li class="dropdown dropdown-small">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Living Room</span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#" onclick="loadlivingroom()">View All</a></li>                                
-                                <li><a href="#">Sofas</a></li>
-                                <li><a href="#">Cahirs</a></li>
-                                <li><a href="#">Tables</a></li>
-                                <li><a href="#">Painting</a></li>
+                                <li><a href="#" onclick="loadlivingroomdecore()">Decore</a></li>
+                                <li><a href="#" onclick="loadlivingroomchairs()">Cahirs</a></li>
+                                <li><a href="#" onclick="loadlivingroomtables()">Tables</a></li>
+                                <li><a href="#" onclick="loadlivingroompaints()">Painting</a></li>
                             </ul>
                         </li>
                         <li class="dropdown dropdown-small">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Bedroom</span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#" onclick="loadbedroom()">View All</a></li>                                
-                                <li><a href="#">Beds</a></li>
-                                <li><a href="#">Beddings</a></li>
-                                <li><a href="#">Pillows</a></li>
-                                <li><a href="#">Lamps</a></li>
+                                <li><a href="#" onclick="loadbedroompillow()">Pillows</a></li>
+                                <li><a href="#" onclick="loadbedroomlamp()">Lamps</a></li>
                             </ul>
                         </li>
                         <li class="dropdown dropdown-small">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Kids Area</span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#" onclick="loadkids()">View All</a></li>                                
-                                <li><a href="#">New Born</a></li>
-                                <li><a href="#">Accessories</a></li>
-                                <li><a href="#">Textile</a></li>
+                                <li><a href="#" onclick="loadkidsnewborn()">New Born</a></li>
+                                <li><a href="#" onclick="loadkidstextile()">Textile</a></li>
+                                <li><a href="#" onclick="loadkidsaccessories()">Accessories</a></li>
                             </ul>
                         </li>
                     </ul>
+                    <form class="form" role="search" alig>
+                        <input type="search" id="query" name="q"
+                         placeholder="Search..."
+                         aria-label="Search through site content">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                      </form>
                 </div>  
             </div>
         </div>
