@@ -145,3 +145,43 @@ app.get("/getOpenOrders", (req, res) => { //get open orders from mongo
   }
   getOrders();
 });
+
+
+app.get("/getproduct", (req, res) => { //show all the iwatch products
+  async function ProductData() {
+    await mydb.getproduct().then((result) => res.send(result));
+  }
+  ProductData();
+});
+
+app.get('/addNewOrder', (req, res) => { // get order details to the cart
+  var order =
+  {
+    name: req.query.Name,
+    category:req.query.Category,
+    quantity: req.query.quantity,
+    price: req.query.Price,
+    img:req.query.Img,
+    total: req.query.Price*req.query.quantity, 
+  }
+  async function mysave(details) {
+    await mydb.saveNewOrder(details).then((result) => res.redirect('index.html'));
+  }
+  mysave(order);
+
+})
+
+app.get("/getorder", (req, res) => { // get Order Details
+  async function myData() {
+    await mydb.getOrderDetails().then((result) => res.send(result));
+  }
+  myData();
+});
+
+app.get("/deleteLastOrder", (req, res) => { // delete the cart
+
+  async function deleteLast() {
+    await mydb.deleteOrder().then((result) => res.redirect('index.html'));
+  }
+  deleteLast();
+});

@@ -1278,8 +1278,8 @@ a:hover{
 
   .styled-table-openOrders{
 	border-collapse:unset;
-	margin-right: 200px;
-    margin: 5px 0;
+	margin-left: 200px;
+	margin: 4px 0;
 	font-size: 0.9em;
 	font-family: sans-serif;
 	width: 300px;

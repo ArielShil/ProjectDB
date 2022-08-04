@@ -365,6 +365,16 @@ function getval(){ //search by category name
       });
   }
 
+  function loadOrderCompleted() {
+    fetch("http://localhost:3000/OrderCompleted.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
   /* ADMIN JS */
 
 
@@ -445,3 +455,93 @@ function showOpenOrders() { // create table to see all the open orders
     });
 }
 
+
+
+/* Products */ 
+
+function showProducts() { //create table for iWatch products
+  fetch("/getproduct")
+    .then((response) => response.text())
+    .then((data) => {
+      var productTypes = JSON.parse(data);
+      var myTables = `<table class="styled-table">
+        <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Image</th>
+        <th>Price $</th>
+        <th>Quantity</th>
+        <th> </th>
+      
+    </tr>
+</table>`;
+      productTypes.forEach((element) => {
+        myTables += `
+        <datalist id="quantity">
+        <option value ="1">
+        <option value ="2">
+        <option value ="3">
+        <option value ="4">
+        </datalist>
+        <form action="/addNewOrder">
+  <table class="styled-table" >
+ 
+      <tr>
+          <td><input type="hidden" name="name" value="${element.Name}">${element.Name}</td>
+          <td><input type="hidden" name="color" value="${element.Category}">${element.Category}</td>
+         
+          <td ><input type="hidden" name="img" value="${element.Img}">
+          <img src="./img/${element.Img}.jpg" alt="${element.Img}" width="150" height="120">
+          </td>
+          <td> <input type="hidden" name="price" value="${element.Price}">${element.Price}</td>
+          <td>
+          <input list="quantity" id="quantity" placeholder="quantity" name="quantity" required></td>
+          <td><button onclick="openForm(),saveNewOrder()">Add To cart</button></td>
+      </tr>
+      </form>
+      </table>
+                `;
+      });
+      document.getElementById("myProduct").innerHTML = myTables;
+    });
+}
+
+
+function showorder() { //show the cart
+  fetch("/getorder")
+    .then((response) => response.text())
+    .then((data) => {
+      var Types = JSON.parse(data);
+      var myTables = `
+      <table class="styled-table">
+                <tr>
+                <th> Name </th>
+                <th>&nbsp Image</th>
+                <th>&nbsp Price $</th>
+                <th>&nbsp Quantity</th>
+                <th>&nbsp Total</th>
+              
+            </tr>
+        </table>
+        `;
+      Types.forEach((element) => {
+        myTables += ` 
+                <table class="styled-table" >
+                    <tr>
+                    <td><input type="hidden" name="nameProduct" value="${element.Name}">${element.Name}</td>
+                        <td ><input type="hidden" name="img" value="${element.Img}">
+                        <img src="./img/${element.Img}.jpg" alt="${element.Img}" width="150" height="120">
+                        </td>
+                        <td><input type="hidden" name="priceProduct" value="${element.Price}"> ${element.Price}</td>
+                        <td><input type="hidden" name="quantityProduct" value="${element.quantity}"> ${element.quantity}</td>
+                        <td><input type="hidden" name="total" value="${element.total}"> ${element.total}</td>
+                    </tr>
+                    </table>
+                    `; 
+         
+                    
+      });
+      document.getElementById("myOrder").innerHTML = myTables;
+    });
+}

@@ -116,3 +116,51 @@ async function GetOpenOrders(){  // find open orders
   return res;
 };
 exports.GetOpenOrders = GetOpenOrders;
+
+
+
+async function getproduct(){  //show watch collection
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  const db = client.db("DB");
+  let collection = db.collection('Products');
+  let res = await collection.find({}).toArray();
+  client.close();
+  return res;
+}
+
+exports.getproduct = getproduct;
+
+async function getOrderDetails(){  //show my cart 
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  const db = client.db("DB");
+  let collection = db.collection('orderDetails');
+  let res = await collection.find({}).toArray();
+  client.close();
+  return res;
+}
+exports.getOrderDetails=getOrderDetails;
+
+async function saveNewOrder(details){   //add products to cart
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  var col = client.db("DB").collection("orderDetails");
+  var result = await col.insertOne(details);
+  client.close();
+  return result;
+}
+exports.saveNewOrder = saveNewOrder;
+
+
+async function deleteOrder(){  //delete cart after purchase 
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  const db = client.db("DB");
+  var myquary= {name: /^i/}
+  let collection = db.collection('orderDetails');
+  let res = await collection.deleteMany(myquary);
+  client.close();
+  return res;
+}
+exports.deleteOrder=deleteOrder;
