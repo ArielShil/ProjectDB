@@ -105,3 +105,43 @@ app.get("/delete", (req, res) => { //delete user
 });
 
 
+/*Save Order */
+
+app.get('/addorder', (req, res) => { // add order to mongo
+  var date=new Date()
+  var split_date=date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate()
+ var neworder =
+ {
+   Name: req.query.first_name,
+   Last_Name: req.query.last_name,
+   address: req.query.address,
+   payment: req.query.payment,
+   order_date:split_date,
+   status:"open"
+ }
+ async function myorder(details) {
+   await mydb.saveorder(details).then((result) => res.redirect('http://localhost:3000/index.html'));
+ }
+ myorder(neworder);
+
+})
+
+//Delete Order
+
+app.get("/getclose", (req, res) => { 
+
+  var close = req.query.first_name
+
+  async function getclose(details) {
+    await mydb.closeOrders(details).then((result) => res.redirect('adminOrders.html'));
+  }
+  getclose(close);
+});
+
+
+app.get("/getOpenOrders", (req, res) => { //get open orders from mongo
+  async function getOrders() {
+    await mydb.GetOpenOrders().then((result) => res.send(result));
+  }
+  getOrders();
+});

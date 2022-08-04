@@ -275,6 +275,15 @@ function loadCheckout() {
       document.getElementById("renderPage").innerHTML = html;
     });
 }
+function loadcart() {
+  fetch("http://localhost:3000/cart.html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      document.getElementById("renderPage").innerHTML = html;
+    });
+}
 
   
 function getval(){ //search by category name
@@ -346,6 +355,15 @@ function getval(){ //search by category name
       });
   }
 
+  function loadadminOpenOrders() {
+    fetch("http://localhost:3000/adminOpenOrders.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
 
   /* ADMIN JS */
 
@@ -383,5 +401,47 @@ function showUsers() { // create table to see all the exist users
 
 
 
-/*  EXPIRIENCE  */
+function loadalert2() {
+  alert("Order Successfuly Send!")
+}
+
+
+function showOpenOrders() { // create table to see all the open orders
+  fetch("/getOpenOrders")
+    .then((response) => response.text())
+    .then((data) => {
+      var OrdersTypes = JSON.parse(data);
+      var myTables = `<table class="styled-table-openOrders" >
+          <tr>
+          <th style="width:100px">Name </th>
+          <th style="width:100px">Address</th>
+          <th style="width:100px">City</th>
+          <th style="width:100px">Status</th>
+          <th style="width:130px">Order date</th>
+          <th style="width:100px">Order_close</th>
+
+      </tr>
+  </table>`;
+      OrdersTypes.forEach((element) => {
+        myTables += ` <form action ="/getclose">
+                  <table class="styled-table-openOrders" >
+ 
+                      <tr>
+                      <td><input type="hidden" name="_id" value="${element._id}></td>
+                          <td style="width:100px"><input type="hidden" name="name" value="${element.first_name}">${element.first_name}</td>
+                          <td style="width:130px">${element.address}</td>
+                          <td style="width:100px">${element.payment}</td>
+                          <td style="width:100px">${element.status}</td>
+                          <td style="width:100px">${element.order_date}</td>
+                          <td> <button onclick="closeOrder()"> Close order</button></td>
+                          
+                      </tr>
+                   
+                      </table>
+                      </form>
+                  `;
+      });
+      document.getElementById("OpenOrders").innerHTML = myTables;
+    });
+}
 

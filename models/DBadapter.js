@@ -73,3 +73,46 @@ async function deleteUser(details){  //delete user
 exports.deleteUser = deleteUser;
 
 
+
+
+
+async function saveorder(details){  //save new order
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  var col = client.db("DB").collection("Orders");
+  var result = await col.insertOne(details);
+  client.close();
+  return result;
+}
+
+exports.saveorder=saveorder;
+
+
+
+async function closeOrders(details){  // mark order as completed
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  var date=new Date()
+  var split_date=date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate()
+  var dbo = client.db("DB");
+  var myquery = { name: details };
+  var newvalues = { $set: { status: "Close",close_date:split_date } };
+  let collection= dbo.collection('Orders');
+  let res=await collection.updateOne(myquery,newvalues);
+  client.close();
+  return res;
+};
+exports.closeOrders = closeOrders;
+
+
+async function GetOpenOrders(){  // find open orders
+  var client = new MongoClient(url, {useUnifiedTopology: true});
+  await client.connect();
+  var dbo = client.db("DB");
+  var query = { status: "open" };
+  let collection= dbo.collection('Orders');
+  let res=await collection.find(query).toArray() 
+  client.close();
+  return res;
+};
+exports.GetOpenOrders = GetOpenOrders;

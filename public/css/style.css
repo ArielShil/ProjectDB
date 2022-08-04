@@ -1259,13 +1259,11 @@ a:hover{
     background-color: #0f110f;
   }
 
-<<<<<<< Updated upstream
-  form#contact_form.well.form-horizontal{
+  form#contact_form.well.form-horizontal {
     display:table;
     margin: auto;
     width: 750px;
-=======
-
+  }
 
   /*   Table Design  */ 
 
@@ -1280,7 +1278,8 @@ a:hover{
 
   .styled-table-openOrders{
 	border-collapse:unset;
-	margin: 5px 0;
+	margin-right: 200px;
+    margin: 5px 0;
 	font-size: 0.9em;
 	font-family: sans-serif;
 	width: 300px;
@@ -1313,5 +1312,4 @@ a:hover{
   .styled-table tbody .styled-table-openOrders tr.active-row {
 	font-weight: bold;
 	color: #009879;
->>>>>>> Stashed changes
   }
