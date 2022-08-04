@@ -6,7 +6,7 @@ const app = express()
 const port = 3000
 const mydb = require('./models/DBadapter.js')
 
-
+const ejs = require('ejs');
 
 app.use(express.static('public'))
 
@@ -82,3 +82,26 @@ app.get('/addUser', (req, res) => { // add new user by admin
   Newsave(newUser);
 
 })
+
+
+/* Get Exists Users   */
+
+app.get("/getusers", (req, res) => { //get exist users from mongo
+  async function users() {
+    await mydb.getUsers().then((result) => res.send(result));
+  }
+ users();
+});
+
+
+app.get("/delete", (req, res) => { //delete user
+
+  var Delete = req.query.user
+
+  async function getclose(details) {
+    await mydb.deleteUser(details).then((result) => res.redirect('admin.html'));
+  }
+  getclose(Delete);
+});
+
+

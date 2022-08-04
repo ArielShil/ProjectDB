@@ -1,4 +1,10 @@
-function loadkitchen() {
+function fetchPage(whatPage) { //fetch page
+  fetch(whatPage)
+    .then((response) => response.text())
+    .then((data) => (document.getElementById("renderpage").innerHTML = data));
+}
+
+  function loadkitchen() {
     fetch("http://localhost:3000/kitchen.html")
       .then(function (response) {
         return response.text();
@@ -298,6 +304,84 @@ function getval(){ //search by category name
   } 
 }
 
-function addToCart(){
+  function loadlogin() {
+    fetch("http://localhost:3000/login.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
 
+
+
+  function loadadminEditUsers() {
+    fetch("http://localhost:3000/adminEditUsers.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadcart() {
+    fetch("http://localhost:3000/cart.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+  function loadCheckout() {
+    fetch("http://localhost:3000/checkout.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
+
+
+  /* ADMIN JS */
+
+
+function showUsers() { // create table to see all the exist users
+  fetch("/getusers")
+    .then((response) => response.text())
+    .then((data) => {
+      var userTypes = JSON.parse(data);
+      var myTables = `<table class="styled-table-openOrders" >
+          <tr>
+          <th style="width:100px">User Name </th>
+          <th style="width:100px">Password</th>
+          <th style="width:100px">Delete</th>
+      </tr>
+  </table>`;
+     userTypes.forEach((element) => {
+        myTables += ` <form action="/delete">
+                  <table class="styled-table-openOrders" >
+ 
+                      <tr>
+                          <td style="width:130px"><input type="hidden" name="name" value="${element.user}">${element.user}</td>
+                          <td style="width:130px"><input type="hidden" name="password" value="${element.password}">${element.password}</td>
+                          <td> <button onclick="deleteUser()"> Delete User</button></td>
+                          
+                      </tr>
+                   
+                      </table>
+                      </form>
+                  `;
+      });
+      document.getElementById("activeUsers").innerHTML = myTables;
+    });
 }
+
+
+
+/*  EXPIRIENCE  */
+
