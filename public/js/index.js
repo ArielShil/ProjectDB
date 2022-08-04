@@ -1,4 +1,4 @@
-  function loadkitchen() {
+function loadkitchen() {
     fetch("http://localhost:3000/kitchen.html")
       .then(function (response) {
         return response.text();
@@ -214,7 +214,11 @@
   }
 
  function loadalert() {
-  alert("User Successfuly Added!")}
+  alert("User Successfuly Added!")
+}
+  
+function loadorder() {
+  alert("We've recieved your order! Thank you")}
 
   function loadadminUsers() {
     fetch("http://localhost:3000/adminUsers.html")
@@ -236,6 +240,15 @@
       });
   }
 
+  function loadlogin() {
+    fetch("http://localhost:3000/login.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        document.getElementById("renderPage").innerHTML = html;
+      });
+  }
 
   function loadEditUsers() {
     fetch("http://localhost:3000/adminEditUsers.html")
@@ -245,4 +258,46 @@
       .then(function (html) {
         document.getElementById("renderPage").innerHTML = html;
       });
-  }
+}
+
+function loadCheckout() {
+  fetch("http://localhost:3000/checkout.html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      document.getElementById("renderPage").innerHTML = html;
+    });
+}
+
+  
+function getval(){ //search by category name
+  const val = document.querySelector('input').value;
+  if (val.toLowerCase() == "kitchen") {loadkitchen();}
+  if(val.toLowerCase() == "dinner"){loadkitchendinner();}
+  if(val.toLowerCase() == "plate"){loadkitchenplates();}
+  if(val.toLowerCase() == "kitchen textile"){loadkitchentextile();}
+  if(val.toLowerCase() == "serve"){loadkitchenserve();}
+  if (val.toLowerCase() == "livingroom"){loadlivingroom();}
+  if (val.toLowerCase() == "cahir"){loadlivingroomchairs();}
+  if (val.toLowerCase() == "decore"){loadlivingroomdecore();}
+  if (val.toLowerCase() == "paint"){loadlivingroompaints();}
+  if (val.toLowerCase() == "table"){loadlivingroomtables();}
+  if (val.toLowerCase() == "kids"){loadkids();}
+  if (val.toLowerCase() == "new born"){loadkidsnewborn();}
+  if (val.toLowerCase() == "accessories"){loadkidsaccessories();}
+  if (val.toLowerCase() == "kids textile"){loadkidstextile();}
+  if (val.toLowerCase() == "bedroom"){loadbedroom();}
+  if (val.toLowerCase() == "lamp"){loadbedroomlamp();}
+  if (val.toLowerCase() == "pillow"){loadbedroompillow();}
+  if (val.toLowerCase() != "kitchen" && val.toLowerCase() != "dinner" && val.toLowerCase() != "plate" && val.toLowerCase() != "kitchen textile" && val.toLowerCase() != "serve"
+    && val.toLowerCase() != "livingroom" && val.toLowerCase() != "cahir" && val.toLowerCase() != "decore" && val.toLowerCase() != "paint" && val.toLowerCase() != "table"
+    && val.toLowerCase() != "kids" && val.toLowerCase() != "new born" && val.toLowerCase() != "accessories" && val.toLowerCase() != "kids textile" && val.toLowerCase() != "bedroom"
+    && val.toLowerCase() != "lamp" && val.toLowerCase() != "pillow") {
+    alert('no '+ val+ ' product')
+  } 
+}
+
+function addToCart(){
+
+}

@@ -83,6 +83,7 @@ z-index: 999;}
 
 
 .logo h1 {
+font-family: raleway;
 float: left;
 width: auto;  
 height: 80px;  
@@ -96,9 +97,11 @@ resize: none;
 }
 .logo h1 a:hover {text-decoration: none; opacity: .7}
 .logo h1 a span {
-    color: #c59f96;
+    color: #9c6d61;
+    font-weight: bold;
 }
 .shopping-item {
+    font-family: raleway;
     border: 1px solid #ddd;
     float: right;
     font-size: 18px;
@@ -285,9 +288,14 @@ form.form button {
 	background: #d1bd98;
 }
 .block-slider .caption-group{
-	position: absolute;
+	font-family: raleway;
+    position: absolute;
     top: 26%;
     right: 16%;
+}
+
+.black-cap{
+    color: rgb(188, 187, 187);
 }
 .block-slider .caption-group .title{
 	margin: 0;
@@ -594,7 +602,7 @@ padding: 35px 0 180px;}
 
 .footer-bottom-area {background: #000;color: #fff}
 .footer-about-us span {
-  color: #c59f96;
+  color: #9c6d61;
 }
 .footer-wid-title {
   font-family: raleway;
@@ -603,7 +611,8 @@ padding: 35px 0 180px;}
 }
 
 .footer-about-us h2 {
-  font-weight: 200;
+  font-family: raleway;
+  font-weight: 600;
 }
 .footer-menu ul {
     list-style: outside none none;
@@ -621,7 +630,7 @@ padding: 35px 0 180px;}
 
 
 .footer-social a {
-  background: none repeat scroll 0 0 #c59f96;
+  background: none repeat scroll 0 0 #9c6d61;
   color: #fff;
   display: inline-block;
   font-size: 20px;
@@ -630,7 +639,7 @@ padding: 35px 0 180px;}
   margin-right: 10px;
   padding-top: 5px;
   text-align: center;
-  width: 40px;border: 1px solid #c59f96;
+  width: 40px;border: 1px solid #9c6d61;
 }
 
 .footer-social a:hover {background-color: #222;border-color: #666}
@@ -643,22 +652,22 @@ padding: 35px 0 180px;}
     border: medium none;
     margin-bottom: 10px;
     padding: 10px;
-    width: 100%;
+    width: 220px;
 }
 .newsletter-form input[type="submit"] {
-    background: none repeat scroll 0 0 #c59f96;
+    background: none repeat scroll 0 0 #9c6d61;
     border: medium none;
-    color: #fff;
+    color: whitesmoke;
     display: inline-block;
-    font-size: 18px;
     padding: 7px 20px;
-    text-transform: uppercase;border: 1px solid #c59f96;
+    text-transform: uppercase;border: 1px solid #9c6d61;
+    width: 200px;
 }
 .newsletter-form input[type="submit"]:hover {background: #222;border-color: #666}
 .newsletter-form {
     margin-top: 25px;
 }
-a {color: #c59f96}
+a {color: #9c6d61}
 a:hover, a:focus {color: #9c6d61}
 .footer-bottom-area {
   background: none repeat scroll 0 0 #000;
@@ -790,7 +799,7 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     color: #222;
 }
 .product-sidebar-price > ins {
-    color: #c59f96;
+    color: #9c6d61;
     font-weight: 700;
     margin-right: 10px;
     text-decoration: none;
@@ -844,7 +853,7 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     margin-bottom: 25px;
 }
 .product-inner-price > ins {
-    color: #c59f96;
+    color: #9c6d61;
     font-weight: 700;
     margin-right: 10px;
     text-decoration: none;
@@ -859,7 +868,7 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     width: 50px;
 }
 .add_to_cart_button {
-    background: none repeat scroll 0 0 #ac7b70;
+    background: none repeat scroll 0 0 #9c6d61;
     border: medium none;
     color: #fff;
     padding: 6px 25px;display: inline-block
@@ -882,7 +891,7 @@ form.cart {
     display: inline-block;
 }
 .product-tab li.active {
-    background: none repeat scroll 0 0 #c59f96;
+    background: none repeat scroll 0 0 #9c6d61;
 }
 .product-tab li.active a {
     color: #fff;
@@ -967,7 +976,7 @@ td.product-name {
     font-size: 18px;
 }
 div.quantity input.plus, div.quantity input.minus {
-    background: none repeat scroll 0 0 #c59f96;
+    background: none repeat scroll 0 0 #9c6d61;
     border: medium none;
     color: #fff;
     height: 25px;
@@ -1164,7 +1173,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     margin-top: 15px;
 }
 
-.single-shop-product {margin-bottom: 50px}
+.single-shop-product {margin-bottom: 50px; font-family: raleway;}
 
 .pagination > li > a, .pagination > li > span {
   color: #c59f96;
@@ -1248,4 +1257,10 @@ a:hover{
   /* Add a background color on hover */
   .btn-group button:hover {
     background-color: #0f110f;
+  }
+
+  form#contact_form.well.form-horizontal{
+    display:table;
+    margin: auto;
+    width: 750px;
   }

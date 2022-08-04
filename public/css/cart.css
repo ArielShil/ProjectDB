@@ -1,6 +1,7 @@
 body{
     margin-top:20px;
     background:#eee;
+    font-family: raleway;
 }
 .ui-w-40 {
     width: 40px !important;
@@ -30,10 +31,27 @@ table.table-bordered{
 input.form-control.text-center{
     width: fit-content;
     block-size: fit-content;
+    margin-left: 28%;
 }
 
 td.align-middle.p-4{
-        align-items: center;
+    align-items: center;
+}
+a.shop-tooltip.close.float-none.text-danger{
+    margin-right: 38%;
+}
+
+tr{
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+th{
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 10%;
 }
 
 .text-muted.font-weight-normal.m-0{
@@ -42,15 +60,29 @@ td.align-middle.p-4{
 }
 
 label.text-muted.font-weight-normal.m-0{
-    color: #3b3d2ca3;
+    color: black;
     margin-right: 5%;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .text-large{
-    color: #3b3d2ca3;
+    color: black;
     margin-right: 7.5%;
     font-size: 17px;
+}
+
+button.btn-lg.md-btn-flat.mt-2{
+    background-color: #9c6d61;
+    border-color: #9c6d61;
+    color: white;
+}
+
+button.btn.btn-lg.btn-primary.mt-2{
+    background-color: #9c6d61;
+    border-color: #9c6d61;
+    color: white;
+    font-weight: 700;
 }
 
 
