@@ -153,11 +153,13 @@ async function saveNewOrder(details){   //add products to cart
 exports.saveNewOrder = saveNewOrder;
 
 
-async function deleteOrder(){  //delete cart after purchase 
+//delete cart after purchase 
+
+async function deleteOrder(){  
   var client = new MongoClient(url, {useUnifiedTopology: true});
   await client.connect();
   const db = client.db("DB");
-  var myquary= {name: /^i/}
+  var myquary= {Name: /^i/}
   let collection = db.collection('orderDetails');
   let res = await collection.deleteMany(myquary);
   client.close();

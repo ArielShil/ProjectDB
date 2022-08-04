@@ -120,7 +120,7 @@ app.get('/addorder', (req, res) => { // add order to mongo
    status:"open"
  }
  async function myorder(details) {
-   await mydb.saveorder(details).then((result) => res.redirect('http://localhost:3000/index.html'));
+   await mydb.saveorder(details).then((result) => res.redirect('http://localhost:3000/OrderCompleted.html'));
  }
  myorder(neworder);
 
@@ -133,7 +133,7 @@ app.get("/getclose", (req, res) => {
   var close = req.query.first_name
 
   async function getclose(details) {
-    await mydb.closeOrders(details).then((result) => res.redirect('adminOrders.html'));
+    await mydb.closeOrders(details).then((result) => res.redirect('admin.html'));
   }
   getclose(close);
 });

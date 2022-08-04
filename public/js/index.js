@@ -285,6 +285,16 @@ function loadcart() {
     });
 }
 
+function loadOrderCompleted() {
+  fetch("http://localhost:3000/OrderCompleted.html")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (html) {
+      document.getElementById("renderPage").innerHTML = html;
+    });
+}
+
   
 function getval(){ //search by category name
   const val = document.querySelector('input').value;
@@ -415,8 +425,8 @@ function loadalert2() {
   alert("Order Successfuly Send!")
 }
 
-
-function showOpenOrders() { // create table to see all the open orders
+// create table to see all the open orders
+function showOpenOrders() { 
   fetch("/getOpenOrders")
     .then((response) => response.text())
     .then((data) => {
@@ -459,7 +469,9 @@ function showOpenOrders() { // create table to see all the open orders
 
 /* Products */ 
 
-function showProducts() { //create table for iWatch products
+//create table for the products
+
+function showProducts() { 
   fetch("/getproduct")
     .then((response) => response.text())
     .then((data) => {
