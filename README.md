@@ -25,7 +25,8 @@ Home page for Client and for Manager:
 
 Products:
 
-Cart:
+
+<img width="2240" alt="image" src="https://user-images.githubusercontent.com/105796367/183032136-8bff1395-8d74-48d4-8566-69eba8e5fd1d.png">
 
 Checkout:
 
